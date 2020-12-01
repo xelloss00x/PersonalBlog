@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>1. Java® Platform, Standard Edition &amp; Java Development Kit Version 11 API Specification | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原文链接：https:&#x2F;&#x2F;docs.oracle.com&#x2F;en&#x2F;java&#x2F;javase&#x2F;11&#x2F;docs&#x2F;api&#x2F;index.html 文章标题《Java SE和JDK 11 API说明书》 API说明文档主要分成两部分：Java SE、JDK。  Java SE：Java平台标准版(Java SE) api定义了用于通用计算的核心Java平台。这些api位于名称以java开头的模块中。 JDK：J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1. Java® Platform, Standard Edition &amp; Java Development Kit Version 11 API Specification">
+<meta property="og:url" content="http://example.com/2020/11/30/review/Java11%20Api%20Document/1.%20Java%C2%AE%20Platform,%20Standard%20Edition%20&%20Java%20Development%20Kit%20Version%2011%20API%20Specification/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原文链接：https:&#x2F;&#x2F;docs.oracle.com&#x2F;en&#x2F;java&#x2F;javase&#x2F;11&#x2F;docs&#x2F;api&#x2F;index.html 文章标题《Java SE和JDK 11 API说明书》 API说明文档主要分成两部分：Java SE、JDK。  Java SE：Java平台标准版(Java SE) api定义了用于通用计算的核心Java平台。这些api位于名称以java开头的模块中。 JDK：J">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-30T12:07:16.646Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="review">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-review/Java11 Api Document/1. Java® Platform, Standard Edition &amp; Java Development Kit Version 11 API Specification" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/30/review/Java11%20Api%20Document/1.%20Java%C2%AE%20Platform,%20Standard%20Edition%20&%20Java%20Development%20Kit%20Version%2011%20API%20Specification/" class="article-date">
+  <time datetime="2020-11-29T16:00:00.000Z" itemprop="datePublished">2020-11-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/review/">review</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      1. Java® Platform, Standard Edition &amp; Java Development Kit Version 11 API Specification
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">https://docs.oracle.com/en/java/javase/11/docs/api/index.html</a></p>
+<p>文章标题《Java SE和JDK 11 API说明书》</p>
+<p>API说明文档主要分成两部分：Java SE、JDK。</p>
+<ul>
+<li>Java SE：Java平台标准版(Java SE) api定义了用于通用计算的核心Java平台。这些api位于名称以java开头的模块中。</li>
+<li>JDK：Java开发工具包(JDK) api是特定于JDK的，并不一定在Java SE平台的所有实现中都可用。这些api位于名称以jdk开头的模块中。</li>
+</ul>
+<p>Java SE</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>java.base</td>
+<td>定义了Java SE的基础API</td>
+</tr>
+<tr>
+<td>java.compiler</td>
+<td>定义了语言模型、注释处理和Java编译器API</td>
+</tr>
+<tr>
+<td>java.datatransfer</td>
+<td>定义用于在应用程序之间和应用程序内部传输数据的API</td>
+</tr>
+<tr>
+<td>java.desktop</td>
+<td>定义了AWT和Swing用户界面工具包，以及用于可访问性、音频、图像处理、打印和javabean的api</td>
+</tr>
+<tr>
+<td>java.instrument</td>
+<td>定义允许代理检测运行在JVM上的程序的服务</td>
+</tr>
+<tr>
+<td>java.logging</td>
+<td>定义了Java日志API</td>
+</tr>
+<tr>
+<td>java.management</td>
+<td>定义Java管理扩展(JMX) API</td>
+</tr>
+<tr>
+<td>java.management.rmi</td>
+<td>为Java管理扩展(JMX)远程API定义RMI连接器</td>
+</tr>
+<tr>
+<td>java.naming</td>
+<td>定义Java命名和目录接口(JNDI) API</td>
+</tr>
+<tr>
+<td>java.net.http</td>
+<td>定义HTTP客户端和WebSocket api</td>
+</tr>
+<tr>
+<td>java.prefs</td>
+<td>定义首选项API</td>
+</tr>
+<tr>
+<td>java.rmi</td>
+<td>远程方法调用(RMI) API</td>
+</tr>
+<tr>
+<td>java.scripting</td>
+<td>定义脚本API</td>
+</tr>
+<tr>
+<td>java.se</td>
+<td>定义Java SE平台的API</td>
+</tr>
+<tr>
+<td>java.security.jgss</td>
+<td>定义IETF通用安全服务API (GSS-API)的Java绑定</td>
+</tr>
+<tr>
+<td>java.security.sasl</td>
+<td>定义对IETF简单身份验证和安全层(SASL)的Java支持</td>
+</tr>
+<tr>
+<td>java.sql</td>
+<td>定义JDBC API</td>
+</tr>
+<tr>
+<td>java.sql.rowset</td>
+<td>定义JDBC RowSet API</td>
+</tr>
+<tr>
+<td>java.transaction.xa</td>
+<td>在JDBC中定义支持分布式事务的API</td>
+</tr>
+<tr>
+<td>java.xml</td>
+<td>定义用于XML处理的Java API (JAXP)、用于XML的流API (StAX)、用于XML的简单API (SAX)和W3C文档对象模型(DOM) API</td>
+</tr>
+<tr>
+<td>java.xml.crypto</td>
+<td>为XML加密定义API</td>
+</tr>
+</tbody></table>
+<p>JDK</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jdk.accessibility</td>
+<td>定义辅助技术的实现者使用的JDK实用程序类</td>
+</tr>
+<tr>
+<td>jdk.attach</td>
+<td>定义附加API</td>
+</tr>
+<tr>
+<td>jdk.charsets</td>
+<td>提供java.base中没有的字符集(主要是双字节和IBM字符集)</td>
+</tr>
+<tr>
+<td>jdk.compiler</td>
+<td>定义系统Java编译器的实现和它的命令行对等物javac</td>
+</tr>
+<tr>
+<td>jdk.crypto.cryptoki</td>
+<td>提供SunPKCS11安全提供程序的实现</td>
+</tr>
+<tr>
+<td>jdk.crypto.ec</td>
+<td>提供SunEC安全提供程序的实现</td>
+</tr>
+<tr>
+<td>jdk.dynalink</td>
+<td>定义用于对象上高级操作的动态链接的API。</td>
+</tr>
+<tr>
+<td>jdk.editpad</td>
+<td>提供jdk.jshell使用的编辑垫服务的实现</td>
+</tr>
+<tr>
+<td>jdk.hotspot.agent</td>
+<td>定义HotSpot可服务性代理的实现。</td>
+</tr>
+<tr>
+<td>jdk.httpserver</td>
+<td>定义特定于jdk的HTTP服务器API。</td>
+</tr>
+<tr>
+<td>jdk.jartool</td>
+<td>定义用于操作Java归档(JAR)文件的工具，包括JAR和jarsigner工具</td>
+</tr>
+<tr>
+<td>jdk.javadoc</td>
+<td>定义系统文档工具和它的命令行对等物javadoc的实现</td>
+</tr>
+<tr>
+<td>jdk.jcmd</td>
+<td>定义用于诊断和排除JVM故障的工具，如jcmd、jps和jstat工具</td>
+</tr>
+<tr>
+<td>jdk.jconsole</td>
+<td>定义用于监视和管理运行中的应用程序的JMX图形化工具jconsole</td>
+</tr>
+<tr>
+<td>jdk.jdeps</td>
+<td>定义用于分析Java库和程序中的依赖关系的工具，包括jdeps、javap和jdeprscan工具</td>
+</tr>
+<tr>
+<td>jdk.jdi</td>
+<td>定义Java调试接口。</td>
+</tr>
+<tr>
+<td>jdk.jdwp.agent</td>
+<td>提供Java调试连线协议(JDWP)代理的实现</td>
+</tr>
+<tr>
+<td>jdk.jfr</td>
+<td>为JDK飞行记录器定义API</td>
+</tr>
+<tr>
+<td>jdk.jlink</td>
+<td>定义用于创建运行时映像的jlink工具、用于创建和操作jmod文件的jmod工具，以及用于检查特定于JDK实现的容器文件(用于类和资源)的jimage工具</td>
+</tr>
+<tr>
+<td>jdk.jshell</td>
+<td>这个模块提供了对Java编程语言“代码片段”计算工具的支持，例如Read-Eval-Print循环(REPLs)，包括jshell工具</td>
+</tr>
+<tr>
+<td>jdk.jsobject</td>
+<td>为JavaScript对象定义API</td>
+</tr>
+<tr>
+<td>jdk.jstatd</td>
+<td>定义用于为jstat工具启动守护进程的jstatd工具，以远程监视JVM统计信息</td>
+</tr>
+<tr>
+<td>jdk.localedata</td>
+<td>为美国地区以外的地区提供地区数据</td>
+</tr>
+<tr>
+<td>jdk.management</td>
+<td>为JVM定义特定于jdk的管理接口</td>
+</tr>
+<tr>
+<td>jdk.management.agent</td>
+<td>定义JMX管理代理</td>
+</tr>
+<tr>
+<td>jdk.management.jfr</td>
+<td>定义JDK飞行记录器的管理接口</td>
+</tr>
+<tr>
+<td>jdk.naming.dns</td>
+<td>提供DNS Java命名提供程序的实现</td>
+</tr>
+<tr>
+<td>]jdk.naming.rmi</td>
+<td>提供RMI Java命名提供程序的实现</td>
+</tr>
+<tr>
+<td>jdk.net</td>
+<td>定义特定于jdk的网络API</td>
+</tr>
+<tr>
+<td>jdk.pack</td>
+<td>定义用于将JAR文件转换为压缩的pack200文件和将打包的文件转换为JAR文件的工具，包括pack200和unpack200工具</td>
+</tr>
+<tr>
+<td>jdk.rmic</td>
+<td>定义rmic编译器，用于使用远程对象的Java远程方法协议(JRMP)生成存根和骨架</td>
+</tr>
+<tr>
+<td>jdk.scripting.nashorn</td>
+<td>为ECMAScript 5.1编写的程序提供了Nashorn脚本引擎的实现和运行时环境</td>
+</tr>
+<tr>
+<td>jdk.sctp</td>
+<td>为SCTP定义特定于jdk的API</td>
+</tr>
+<tr>
+<td>jdk.security.auth</td>
+<td>提供javax.security.auth.*接口的实现和各种身份验证模块。</td>
+</tr>
+<tr>
+<td>jdk.security.jgss</td>
+<td>定义GSS-API的JDK扩展和SASL GSSAPI机制的实现</td>
+</tr>
+<tr>
+<td>jdk.xml.dom</td>
+<td>定义不属于Java SE API的W3C文档对象模型(DOM) API的子集</td>
+</tr>
+<tr>
+<td>jdk.zipfs</td>
+<td>提供zip文件系统提供程序的实现</td>
+</tr>
+</tbody></table>
+<p>其他模块</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>java.smartcardio</td>
+<td>定义Java智能卡I/O API</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/30/review/Java11%20Api%20Document/1.%20Java%C2%AE%20Platform,%20Standard%20Edition%20&%20Java%20Development%20Kit%20Version%2011%20API%20Specification/" data-id="cki5xfs0f00065sxv6cce3mfx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/review/" rel="tag">review</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/30/algorithm/MoveZeroes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MoveZeroes
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/30/review/Java11%20Api%20Document/2.%20Module%20java.base%20packages/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2. Module java.base packages</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/review/">review</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tip/">tip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/review/" rel="tag">review</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/tip/" style="font-size: 20px;">tip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/30/tip/MyBatis%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B5%81%E5%BC%8F%E6%9F%A5%E8%AF%A2/">MyBatis如何实现流式查询</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/30/algorithm/MaximumGap/">MaximumGap</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/30/algorithm/MoveZeroes/">MoveZeroes</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/30/review/Java11%20Api%20Document/1.%20Java%C2%AE%20Platform,%20Standard%20Edition%20&%20Java%20Development%20Kit%20Version%2011%20API%20Specification/">1. Java® Platform, Standard Edition &amp; Java Development Kit Version 11 API Specification</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
